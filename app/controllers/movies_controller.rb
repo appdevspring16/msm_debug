@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
 
     @movie.save
 
-    redirect_to("show")
+    render("show")
   end
 
   def edit_form
