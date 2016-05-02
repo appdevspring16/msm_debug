@@ -3,11 +3,11 @@ class DirectorsController < ApplicationController
     @directors = Director.all
   end
 
-  def show
+  def show_details
     @director = Director.find(params[:id])
   end
 
-  def new
+  def new_form
   end
 
   def create_row
