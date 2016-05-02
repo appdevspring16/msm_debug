@@ -4,7 +4,7 @@ class ActorsController < ApplicationController
   end
 
   def show
-    @actor = Actor.find_by({:id => params[:id]})
+    @actor = Actor.find(params[:id])
   end
 
   def new_form
@@ -19,15 +19,15 @@ class ActorsController < ApplicationController
 
     @actor.save
 
-    render("show.html.erb")
+    render("show")
   end
 
   def edit_form
-    @actor = Actor.find_by({:id => params[:id]})
+    @actor = Actor.find(params[:id])
   end
 
   def update_row
-    @actor = Actor.find_by({:id => params[:id]})
+    @actor = Actor.find(params[:id])
 
     @actor.dob = params[:dob]
     @actor.name = params[:name]
@@ -36,11 +36,11 @@ class ActorsController < ApplicationController
 
     @actor.save
 
-    render("show.html.erb")
+    render("show")
   end
 
   def destroy
-    @actor = Actor.find_by({:id => params[:id]})
+    @actor = Actor.find(params[:id])
 
     @actor.destroy
   end
