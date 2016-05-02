@@ -41,7 +41,6 @@ class DirectorsController < ApplicationController
 
   def destroy
     @director = Director.find(params[:id])
-
     @director.destroy
   end
 end
