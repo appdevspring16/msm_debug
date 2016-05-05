@@ -2,7 +2,7 @@
   <h1>Edit Actor #<%= @actor.id %></h1>
 </div>
 
-<form action="/update_actor" class="form-horizontal">
+<form action="/update_actor/<%= @actor.id %>" class="form-horizontal">
   <!-- Label and input for dob -->
   <div class="form-group">
     <label for="dob" class="col-sm-2 control-label">
@@ -45,7 +45,7 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="Update Actor" class="btn btn-primary">
+      <button class="btn btn-primary">Update Actor</button>
     </div>
   </div>
 </form>
