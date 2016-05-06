@@ -51,7 +51,6 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find_by({:id => params[:id]})
     @movie.destroy
-
     render("index")
   end
 end
