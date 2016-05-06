@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[id])
+    @movie = Movie.find(params[:id])
   end
 
   def new_form
@@ -28,6 +28,9 @@ class MoviesController < ApplicationController
   end
 
   def update_row
+    # get the movie from the data base
+    @movie = Movie.find(params[:id])
+
     @movie.title = params[:title]
     @movie.year = params[:year]
     @movie.duration = params[:duration]
@@ -42,5 +45,6 @@ class MoviesController < ApplicationController
     movie = Movie.find(params[:id])
 
     movie.destroy
+    # @destroyed_movie_id = params[:id]
   end
 end
