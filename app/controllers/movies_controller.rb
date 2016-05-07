@@ -29,6 +29,7 @@ class MoviesController < ApplicationController
   end
 
   def update_row
+    @movie = Movie.find_by({:id => params[:id]})
     @movie.title = params[:title]
     @movie.year = params[:year]
     @movie.duration = params[:duration]
@@ -40,8 +41,8 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    movie = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])
 
-    movie.destroy
+    @movie.destroy
   end
 end
