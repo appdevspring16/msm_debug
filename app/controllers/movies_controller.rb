@@ -4,23 +4,24 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[id])
+    @movie = Movie.find(params[:id])
   end
 
   def new_form
   end
 
   def create_row
-    @movie.title = params[:the_title]
-    @movie.year = params[:the_year]
-    @movie.duration = params[:the_duration]
-    @movie.description = params[:the_description]
-    @movie.image_url = params[:the_image_url]
-    @movie.director_id = params[:the_director_id]
+    m=Movie.new
+    m.title = params[:title]
+    m.year = params[:year]
+    m.duration = params[:duration]
+    m.description = params[:description]
+    m.image_url = params[:image_url]
+    m.director_id = params[:director_id]
 
-    @movie.save
+    m.save
 
-    render("show")
+    redirect_to("http://localhost:3000/movies")
   end
 
   def edit_form
@@ -28,19 +29,23 @@ class MoviesController < ApplicationController
   end
 
   def update_row
-    @movie.title = params[:title]
-    @movie.year = params[:year]
-    @movie.duration = params[:duration]
-    @movie.description = params[:description]
-    @movie.image_url = params[:image_url]
-    @movie.director_id = params[:director_id]
+    m = Movie.find(params[:id])
+    @movie=m
+    m.title = params[:title]
+    m.year = params[:year]
+    m.duration = params[:duration]
+    m.description = params[:description]
+    m.image_url = params[:image_url]
+    m.director_id = params[:director_id]
 
-    render("show")
+    m.save
+
+    redirect_to("http://localhost:3000/movies")
   end
 
   def destroy
     movie = Movie.find(params[:id])
-
+    @movie=movie
     movie.destroy
   end
 end

@@ -1,6 +1,6 @@
 class DirectorsController < ApplicationController
   def index
-    directors = Director.all
+    @directors = Director.all
   end
 
   def show
@@ -19,7 +19,7 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    render("show")
+    redirect_to("http://localhost:3000/directors")
   end
 
   def edit_form
@@ -27,16 +27,16 @@ class DirectorsController < ApplicationController
   end
 
   def update_row
-    @director = Director.find(params[:id])
+    d = Director.find(params[:id])
+    @director = d
+    d.dob = params[:dob]
+    d.name = params[:name]
+    d.bio = params[:bio]
+    d.image_url = params[:image_url]
 
-    @director.dob = params[":dob"]
-    @director.name = params[":name"]
-    @director.bio = params[":bio"]
-    @director.image_url = params[":image_url"]
+    d.save
 
-    @director.save
-
-    render("show")
+    redirect_to("http://localhost:3000/directors")
   end
 
   def destroy
