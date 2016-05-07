@@ -29,12 +29,14 @@ class MoviesController < ApplicationController
   end
 
   def update_row
-    @movie.title = params[:title]
-    @movie.year = params[:year]
-    @movie.duration = params[:duration]
-    @movie.description = params[:description]
-    @movie.image_url = params[:image_url]
-    @movie.director_id = params[:director_id]
+    @movies = Movie.find(params[:id])
+    @movies.title = params[:title]
+    @movies.year = params[:year]
+    @movies.duration = params[:duration]
+    @movies.description = params[:description]
+    @movies.image_url = params[:image_url]
+    @movies.director_id = params[:director_id]
+    @movies.save
 
     render("show")
   end
