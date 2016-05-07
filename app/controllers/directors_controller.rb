@@ -1,13 +1,6 @@
 class DirectorsController < ApplicationController
-  def index
-    directors = Director.all
-  end
 
-  def show
-    @director = Director.find(params[:id])
-  end
-
-  def new
+  def new_form
   end
 
   def create_row
@@ -20,6 +13,14 @@ class DirectorsController < ApplicationController
     @director.save
 
     render("show")
+  end
+
+  def index
+    @directors = Director.all
+  end
+
+  def show
+    @director = Director.find_by({ :id => params[:id]})
   end
 
   def edit_form
@@ -40,8 +41,10 @@ class DirectorsController < ApplicationController
   end
 
   def destroy
-    @director = Director.find(params[:id])
-
+    @director = Director.find_by({ :id => params[:id]})
     @director.destroy
+
+    redirect_to("http://localhost:3000/directors")
+
   end
 end
