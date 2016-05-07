@@ -10,6 +10,10 @@ class DirectorsController < ApplicationController
   def new
   end
 
+def new_form
+  
+end
+
   def create_row
     @director = Director.new
     @director.dob = params[:dob]
