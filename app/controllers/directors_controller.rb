@@ -11,7 +11,7 @@ class DirectorsController < ApplicationController
   end
 
 def new_form
-  
+
 end
 
   def create_row
@@ -23,7 +23,7 @@ end
 
     @director.save
 
-    render("show")
+    redirect_to("/directors")
   end
 
   def edit_form
