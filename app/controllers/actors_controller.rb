@@ -19,7 +19,8 @@ class ActorsController < ApplicationController
 
     @actor.save
 
-    render("show")
+    # render("show")
+    render("show.html.erb")
   end
 
   def edit_form
@@ -36,7 +37,8 @@ class ActorsController < ApplicationController
 
     @actor.save
 
-    render("show")
+    # render("show")
+    render("show.html.erb")
   end
 
   def destroy
