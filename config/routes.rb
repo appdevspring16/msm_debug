@@ -55,18 +55,18 @@ Rails.application.routes.draw do
 
   # Routes for the Actor resource:
   # CREATE
-  get('/actors/new_form', { :controller => 'actors', :action => 'new_form' })
-  get('/create_actor', { :controller => 'actors', :action => 'create_row' })
+  get('/actors/new_form', { :controller => 'actors', :action => 'new_form'   })
+  get('/create_actor',    { :controller => 'actors', :action => 'create_row' })
 
   # READ
-  get('/actors', { :controller => 'actors', :action => 'index' })
-  get('/actors/:id', { :controller => 'actors', :action => 'show' })
+  get('/actors',     { :controller => 'actors', :action => 'index' })
+  get('/actors/:id', { :controller => 'actors', :action => 'show'  })
 
   # UPDATE
-  get('/actors/:id/edit_form', { :controller => 'actors', :action => 'edit_form' })
-  get('/update_actor/:id', { :controller => 'actors', :action => 'update_row' })
+  get('/actors/:id/edit_form', { :controller => 'actors', :action => 'edit_form'  })
+  get('/update_actor/:id',     { :controller => 'actors', :action => 'update_row' })
 
   # DELETE
-  get('/delete_actor/:id', { :controller => 'actors', :action => 'destroy' })
+  get('/delete_actor/:id',     { :controller => 'actors', :action => 'destroy' })
   #------------------------------
 end
