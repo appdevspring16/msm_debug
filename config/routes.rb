@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get("/create_role", { :controller => "roles", :action => "create_row" })
 
   # READ"  get("/roles", { :controller => "roles", :action => "index" })
+  get("/roles", { :controller => "roles", :action => "index" })
   get("/roles/:id", { :controller => "roles", :action => "show" })
 
   # UPDATE
