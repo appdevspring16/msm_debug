@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # READ
   get('/directors', { :controller => 'directors', :action => 'index' })
-  get('/directors/id', { :controller => 'directors', :action => 'show' })
+  get('/directors/:id', { :controller => 'directors', :action => 'show' })
 
   # UPDATE
   get('/directors/:id/edit_form', { :controller => 'directors', :action => 'edit_form' })
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   # READ
   get('/movies', { :controller => 'movies', :action => 'index' })
   get('/movies/:id', { :controller => 'movies', :action => 'show' })
+
 
   # UPDATE
   get('/movies/:id/edit_form', { :controller => 'movies', :action => 'edit_form' })
@@ -49,6 +50,10 @@ Rails.application.routes.draw do
   get('/roles/:id/edit_form', { :controller => 'roles', :action => 'edit_form' })
   get('/update_role/:id', { :controller => 'roles', :action => 'update_row' })
 
+  # # UPDATE
+  # get('/directors/:id/edit_form', { :controller => 'directors', :action => 'edit_form' })
+  # get('/update_director/:id', { :controller => 'directors', :action => 'update_row' })
+
   # DELETE
   get('/delete_role/:id', { :controller => 'roles', :action => 'destroy' })
   #------------------------------
@@ -65,6 +70,10 @@ Rails.application.routes.draw do
   # UPDATE
   get('/actors/:id/edit_form', { :controller => 'actors', :action => 'edit_form' })
   get('/update_actor/:id', { :controller => 'actors', :action => 'update_row' })
+
+  # # UPDATE
+  # get('/directors/:id/edit_form', { :controller => 'directors', :action => 'edit_form' })
+  # get('/update_director/:id', { :controller => 'directors', :action => 'update_row' })
 
   # DELETE
   get('/delete_actor/:id', { :controller => 'actors', :action => 'destroy' })
