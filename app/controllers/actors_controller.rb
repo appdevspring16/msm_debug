@@ -39,6 +39,8 @@ class ActorsController < ApplicationController
     render("show")
   end
 
+
+# works
   def destroy
     @actor = Actor.find(params[:id])
 
