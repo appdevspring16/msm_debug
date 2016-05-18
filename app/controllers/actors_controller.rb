@@ -4,7 +4,7 @@ class ActorsController < ApplicationController
   end
 
   def show
-    @actor = Actor.find(params[:id])
+    @actor = Actor.find_by({:id => params[:id]})
   end
 
   def new_form
@@ -19,7 +19,7 @@ class ActorsController < ApplicationController
 
     @actor.save
 
-    render("show")
+    redirect_to("http://localhost:3000/actors/#{@actor.id}")
   end
 
   def edit_form
@@ -28,12 +28,10 @@ class ActorsController < ApplicationController
 
   def update_row
     @actor = Actor.find(params[:id])
-
     @actor.dob = params[:dob]
     @actor.name = params[:name]
     @actor.bio = params[:bio]
     @actor.image_url = params[:image_url]
-
     @actor.save
 
     render("show")
